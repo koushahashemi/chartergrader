@@ -1,0 +1,9 @@
+Greenify Inc.
+Industry: Sustainable Urban Development
+Company Description: Greenify Inc. is a fast-growing startup specializing in smart city technology. They develop and implement internet-of-things (IoT) sensor networks and data analytics platforms to help cities optimize resource management and improve sustainability metrics.
+Current Challenge: Greenify has recently secured a major contract with a large metropolitan area to implement their smart waste management solution. This involves deploying thousands of wireless sensors on overflowing trash bins throughout the city. The data collected will be used to optimize collection routes, reduce fuel consumption, and ultimately decrease greenhouse gas emissions. However, Greenify is facing challenges in integrating their existing data platform with the city's legacy waste management system.
+Technical Aspects: The scenario can delve into technical details relevant to business analysts, such as:
+Data integration challenges: The legacy system uses a proprietary database format, requiring data transformation and mapping.
+Real-time data processing: The platform needs to handle a high volume of sensor data streaming in real-time.
+Security considerations: The system must ensure secure data transmission and access control for sensitive city data.
+This brief summary provides a springboard for you to build a practice scenario. You can add details about stakeholders, specific business requirements, and potential technical solutions to create a realistic and engaging training experience for your technical business analysts

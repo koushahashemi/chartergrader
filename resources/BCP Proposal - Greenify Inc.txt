@@ -1,0 +1,52 @@
+BITMAN BUSINESS CONSULTING PROJECT 2025
+
+Greenify Inc.
+INDUSTRY/SEGMENT: Sustainable Urban Development
+Greenify Inc. is a fast-growing startup specializing in smart city technology. They develop and
+implement internet-of-things (IoT) sensor networks and data analytics platforms to help cities
+optimize resource management and improve sustainability metrics.
+
+BUSINESS CHALLENGE/OPPORTUNITY:
+Greenify has recently secured a major contract with the City of Vancouver (CoV) to implement their
+smart waste management solution. This involves deploying thousands of wireless sensors on
+overflowing trash bins throughout the city. The data collected will be used to optimize collection
+routes, reduce fuel consumption, and ultimately decrease greenhouse gas emissions. However,
+Greenify is facing challenges in integrating their existing data platform with the city's legacy waste
+management system.
+
+HOW A BCIT BUSINESS CONSULTING PROJECT WILL HELP:
+In preparation to fulfill their new contract, Greenify must undertake a number of tasks on which a
+BITMAN team may be able to assist:
+•
+
+•
+
+•
+
+Data integration: The legacy system the CoV uses to keep track of trash collection is limited
+and outdated. The data structure does not mesh well with Greenify’s platform and will
+require mapping and a plan to transform the data to allow the two systems to integrate.
+Security considerations: All contracts with the CoV require vendors to have documented
+policies around data handling and storage. Greenify needs guidance on how to approach
+the creation of these policies.
+Software selection: One of the key deliverables for CoV is optimized route planning for their
+trash collection fleet. This is outside the scope of Greenify’s current offering, so they need
+help selecting a software they can integrate with in order to deliver this functionality.
+
+ACTIVITIES TO BE
+UNDERTAKEN:
+•
+•
+•
+
+Data mapping and integration planning
+Security analysis and planning
+Software selection
+
+ANTICIPATED OUTCOMES:
+
+Students will provide as much value as possible
+in the 10 week window to help prepare for the
+CoV contract.
+
+

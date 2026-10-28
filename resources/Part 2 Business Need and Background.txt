@@ -1,0 +1,158 @@
+Part 2: Business Need and Background
+BSYS 3355 | Individual Project: Project Charter | Due October 25, 2026 | 12% of
+project grade
+
+1. Assignment Overview
+In Part 2, you will begin developing the written content of your Project Charter for Greenify Inc. In Part 1, you
+identified questions that a business consultant or business analyst should ask to understand the client’s
+situation. You will now receive a consolidated document containing the client’s responses to the interview
+questions.
+Review and interpret the information and complete two sections under Introduction in the provided BCIT Project
+Charter template: Business Need for Project and Background.
+This is not simply a summary of interview responses. Demonstrate your understanding of why the project is
+necessary, what business problems or opportunities it addresses, and what circumstances led to the project.
+The charter should make sense to a project sponsor without requiring them to read all the original interview
+questions and responses.
+
+2. Understanding the Required Sections
+A. Business Need for Project
+Recommended length: 200 to 300 words, approximately 2 to 4 well-developed paragraphs.
+The Business Need section explains why the organization needs this project and what business value it is
+expected to provide. A business need can be a problem to address, an opportunity to pursue, or a requirement
+the organization must satisfy. Focus on the business justification rather than detailed technical work.
+•
+•
+•
+•
+•
+
+What business problem, opportunity, or requirement has created the need for this project?
+Why is the project important to Greenify Inc.?
+What challenges or gaps prevent Greenify from achieving its objectives?
+What could happen to the business if these challenges are not addressed?
+How would addressing these needs help Greenify meet its commitments to the City of Vancouver?
+
+For this scenario, consider the business implications of the new City of Vancouver contract, including data
+integration, data governance and security requirements, and route optimization capabilities.
+What good work looks like: A clear and convincing explanation that connects the identified problems to contract
+fulfillment, operational efficiency, costs, client satisfaction, and sustainability. Avoid simply listing technical
+challenges or prescribing solutions. Explain why the consulting project is needed.
+
+B. Background
+Recommended length: 250 to 400 words, approximately 3 to 5 well-developed paragraphs.
+The Background section provides the context and relevant history needed to understand the business need and
+the circumstances surrounding the project. While the Business Need explains why the project is necessary, the
+Background explains the current situation and how it developed.
+•
+
+What does Greenify Inc. do, and what is its area of expertise?
+1
+
+•
+•
+•
+•
+•
+
+What previous experience or capabilities are relevant to this project?
+What is the nature of Greenify’s contract and relationship with the City of Vancouver?
+How do Greenify’s existing technologies and business processes relate to the client’s requirements?
+What existing systems, conditions, or limitations contributed to the challenges?
+What circumstances or constraints help stakeholders understand this consulting engagement?
+
+What good work looks like: A factual, logical account of Greenify’s business, its relevant contract, existing
+capabilities, and the circumstances that created the need for consulting support. Include only background that
+helps explain the project. Do not repeat the Business Need section or include unrelated company history.
+
+Business Need vs. Background
+Business Need
+
+Background
+
+Why is the project necessary?
+
+How did the current situation develop?
+
+What problem must be addressed?
+
+What systems and circumstances currently exist?
+
+What business value is expected?
+
+What organizational and technical context is
+relevant?
+
+Why should Greenify invest effort?
+
+What must stakeholders know to understand the
+project?
+
+
+The two sections should complement each other rather than repeat the same information.
+
+3. Instructions for Completing the Assignment
+
+1. Review the resources. Read the Greenify Inc. proposal, the consolidated interview responses from Part 1,
+and other relevant scenario materials. Identify information needed for the two sections.
+2. Use the official template. Complete Business Need for Project and Background under Introduction. Do not
+create a separate report or replace the supplied Project Charter template.
+3. Preserve the template structure. You may change the fonts, colours, styling, spacing, and cover page. All
+original headings, sections, tables, and appendices must remain. Do not rename, delete, or reorganize
+them.
+4. Write in your own words. Interpret and synthesize the client information. Do not reproduce large portions of
+interview responses or turn the question-and-answer document into paragraphs.
+5. Demonstrate understanding. Select relevant facts, draw logical connections, and explain their significance.
+Keep statements accurate and consistent with the scenario.
+
+6. Separate facts from assumptions. Do not invent requirements, budgets, capabilities, commitments, or
+outcomes. Identify any reasonable assumptions clearly.
+7. Write professionally. Use complete sentences and organized paragraphs. Write clearly, concisely, and
+objectively, avoiding repetition, informal language, and unsupported claims.
+8. Acknowledge sources. Reference external sources and AI assistance where applicable using a consistent
+citation style. A references section may be added without deleting or replacing template content.
+
+4. Length and Presentation Expectations
+Recommended combined length: 450 to 700 words, approximately 1 to 2 pages of substantive writing depending
+on formatting. These are guidelines, not strict limits. Relevant, accurate explanations matter more than meeting
+a word count. Very short responses may omit important context; very long responses may include unnecessary
+detail.
+2
+
+Remember that the project you are chartering is the limited BCIT consulting engagement, not the
+implementation of Greenify’s entire City of Vancouver contract. Explain the larger business context without
+claiming the student team will implement the full citywide solution. Do not prematurely commit to a final project
+scope in Part 2.
+
+5. File Requirements and Ongoing Project Process
+This is one ongoing Project Charter assignment. You must continue to use the same Word file for Part 3 and
+subsequent stages rather than starting a new charter each time. I will provide feedback through comments and
+possibly tracked changes. Review the feedback and revise the existing content as you build the rest of the
+charter.
+Required filename: LastNameA0StudentID.docx. Example: SmithA01234567.docx, using your own last name
+and full student ID.
+For Part 2, complete only the two required sections. Keep all remaining sections in place for future submissions.
+Mandatory template requirement: Not using the supplied BCIT Project Charter template, or replacing it with a
+document that does not preserve its required headings, sections, tables, and appendices, will result in a 50%
+reduction in the assignment mark. Cosmetic changes to style, formatting, or the cover page are allowed.
+
+6. Artificial Intelligence and Academic Integrity
+You may use generative AI for brainstorming, organizing information, grammar improvement, or reviewing clarity.
+AI use is optional. You can earn full marks without using AI.
+
+If you use AI, keep a record of your prompts in a separate file and submit it with the Project Charter. Identify the
+AI tool used and include the prompts you submitted. Also disclose any AI assistance in your references or in an
+AI-use statement.
+The AI prompt record is not graded. Students who do not use AI do not need to submit a prompt record. All
+students remain responsible for verifying the information and showing their own understanding of the project.
+If AI use is suspected but not disclosed, I may request clarification or evidence of the work process. Undisclosed
+AI use may result in a mark deduction under course academic integrity requirements. A deduction will not be
+based solely on an AI detection score or unsupported suspicion.
+
+7. What to Submit
+Submit your updated, editable Word Project Charter file using the required filename. If you used AI, also submit
+a separate AI prompt record. I will provide feedback on the two sections completed for this stage, and you will
+apply that feedback in the same file as you continue to Part 3.
+
+3
+
+

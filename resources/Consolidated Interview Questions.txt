@@ -1,0 +1,350 @@
+Consolidated Q&A
+Version 2026-2
+Updated October 19, 2026, 10:50 pm
+
+Contents
+Background Information and Context2
+Objectives, Success Metrics, and KPIs3
+Data Integration and Technical Challenges5
+Data Handling, Security, and Compliance7
+Software Selection for Route Optimization9
+Project Timeline, Deliverables, and Priorities11
+Risks, Challenges, and Contingency Plans13
+Stakeholders, Team Collaboration, and Communication14
+Budget and Resource Allocation16
+Project Scope and Limitations17
+Existing Documentation and Resources18
+Support and Maintenance Post-Project19
+Regulatory and Environmental Compliance20
+Miscellaneous Questions21
+
+
+Background Information and Context
+Company History
+Can you provide more details about Greenify's background and expertise?
+How did Greenify secure the contract with CoV?
+Past Projects
+Have similar integrations been performed before?
+What lessons were learned from previous experiences?
+General Information
+How does Greenify earn revenue?
+When did Greenify first identify the integration challenges?
+Response
+Greenify is a combination hardware/software company with approximately 10 years of experience. They specialize in creating networked sensors to collect data which can then be analysed to provide insights across various areas.
+In the past Greenify has deployed sensors in several major cities to monitor air quality and provided maps to city planners to identify areas of concern.
+City of Vancouver will be Greenify’s first client for their new sensor network which measures data around waste management, particularly garbage bin usage and status.
+Previous projects have allowed Greenify to become experts in areas such as:
+Construction of highly rugged sensors capable of withstanding adverse weather conditions for up to 5 years.
+Secure wifi based sharing of data between sensors and centralized databases for collection of data.
+Analysis of environmental data in a geographic context to provide meaningful insights.
+Greenify won the contract with CoV by bidding on a Request for Proposal (RFP) from the city. The contract starts January 1, 2027 and runs for 5 years, at which point a mutual option to renew may be exercised by both CoV and Greenify. The contract is fixed price.
+We earn revenue from hardware sales, sensor deployments, data analytics services, and ongoing support contracts. 
+We became aware of the potential challenges while preparing our proposal for the City. Once we started reviewing the City's existing system, we realized that more work would be needed to integrate the two platforms.
+Objectives, Success Metrics, and KPIs
+Primary Goals
+What are Greenify's main objectives with this project?
+How does this project align with CoV's sustainability and operational goals?
+Which is more important, collecting overflowing bins or saving fuel?
+Measuring Success
+What KPIs will be used to measure the project's success (e.g., fuel savings, emission reductions)?
+Are there specific targets or benchmarks to achieve?
+Long-Term Vision
+Beyond immediate outcomes, what are the long-term strategic goals for Greenify and CoV?
+Response
+There are three tiers of goals and KPIs that may be relevant.
+CoV:
+Primary goals of CoV include
+Reduce costs (high priority given costs of aging infrastructure, population growth and increased costs associated with federal carbon tax)
+Reduce emissions
+Place waste collection bins more strategically
+Forecast staffing needs
+Immediate KPI (No specific percentage target at the moment)
+Distance driven by fleet, which will be mapped to cost and emissions
+Greenify Inc.
+Primary goals of Greenify include
+Deliver full scope of contract to CoV
+Reduce costs on contract as much as possible (contract with CoV is fixed price, so margin will be determined by costs)
+Deliver high client satisfaction to ensure CoV exercises option to renew in contract
+Leverage positive testimonials from CoV into similar contracts with other North American cities
+Immediate KPIs
+Cost
+Survey results from CoV employees
+BCIT BCP Project
+Primary goals for this BCP project include
+Deliver as much value as possible
+Collecting bins that need immediate attention comes first. However, we still want to minimize travel distance and fuel consumption whenever possible. The route-planning software should help us balance both objectives.
+
+Data Integration and Technical Challenges
+Details of CoV's Legacy System
+What waste management system does the City of Vancouver (CoV) currently use?
+Can you provide specifics about the data formats, structures, and platforms involved?
+What data types and volumes are we dealing with?
+What’s the current backup process for the sensor data collected from trash bins — is it stored on cloud servers or locally?
+How does Greenify check sensor accuracy, and what happens when sensors provide incorrect data or go offline?
+What database platforms does the City use, and what are the formats, sizes, and known data issues?
+Integration Challenges
+What specific limitations are causing integration issues between Greenify’s platform and CoV’s legacy system?
+Are there particular data structures or formats causing compatibility problems?
+Have there been previous attempts to integrate the systems, and what obstacles were encountered?
+For data analysis, can Greenify guarantee us an anonymized, ready-to-use dataset (CSV format) from the CoV system, or will the team have to spend time cleaning and transforming it?
+Data Mapping and Transformation
+What are the requirements for data mapping and transformation to achieve compatibility?
+Can you provide existing data models or mappings to assist with this process?
+How will data synchronization between systems be managed (real-time, batch processing, etc.)?
+Is AI already being used, and may students use AI to transform or analyse the data?
+What percentage of unmatched or inaccurate records is acceptable?
+Do Greenify and CoV share a common bin ID? Which system is the source of truth?
+What work has Greenify already attempted to integrate the systems?
+Response
+Neither CoV nor Greenify have comprehensive ERDs or documentation of their data models. Our best bet is probably to review sample data from CoV and the Greenify databases to map the data of each (to themselves and to each other). After the project charter is completed and signed off we can provide sample data from CoV and grant read access to the Greenify databases.
+We do have a sample ERD that highlights some of the challenges of integrating the data.
+Some of the challenges arise from different data formats. For example, CoV enters dates on which each bin is emptied based on routes driven that day. Greenify's data model includes a field for seconds since each bin was emptied, but we will need the City's collection records to populate this field once the systems are integrated. CoV keeps track of the street address of each bin, while Greenify tracks the coordinates (latitude and longitude) of each sensor.
+In general, Greenify’s data model is built around its sensors, while CoV keeps track of bins, routes, drivers, etc.
+One critical aspect of integration: Greenify’s trackers are placed at the mouth of each bin and measures the number of items placed in a bin to estimate fullness. They do not track when a bin is emptied and will rely on CoV data for this information. For this reason, we do need to maintain the CoV system and integrate the data between each system.
+Greenify receives data from its sensors every 15 minutes. CoV updates its data every day. We will need to synchronize data at least daily, but preferably in the morning to account for planned routes that day and in the evening to account for any disruptions to the planned routes.
+We check for unusual readings and missing data. If a sensor stops reporting or provides questionable information, we'll flag it for review. For route planning, we may need to rely on the last reliable reading or the City's collection records.
+Greenify is planning to build a tool which imports CSV files which are exported by CoV databases. The tool is out of scope, but having a reliable map of the data for both systems and between systems will expedite the building of the tool.
+CoV Keeps their data on a cloud service and Greenify has their own data centre. Both system back up data weekly.
+Greenify currently uses an algorithm to calculate bin fullness and urgency, but they don't use AI for this. AI may be something we explore in the future, but it's outside this project's scope. You can use AI tools with sample data, but confidential Greenify or City data must not be shared without approval.
+We would like at least 98% of bin records to be matched correctly. Any unmatched records should be documented and investigated. This is a proposed planning target, not an existing contractual requirement.
+The two systems have bin IDs, but we cannot assume they match. We'll need to create a mapping between them. The City will remain the source of truth for bin locations and collection records, while Greenify will be responsible for sensor readings.
+Greenify has reviewed the basic data structures and identified some differences between the two systems. We haven't built the integration tool yet. 
+
+Data Handling, Security, and Compliance
+Security Requirements
+What specific security policies has CoV outlined for data handling and storage?
+How do Greenify’s current practices align with these requirements?
+Are there industry standards or compliance frameworks (e.g., GDPR, ISO) that need to be followed?
+Existing Policies
+Does Greenify have existing data security protocols or policies?
+Can we review any current documentation on data handling and storage practices?
+Data Privacy and Protection
+Are there concerns regarding data privacy, especially with the use of IoT sensors?
+How will sensitive data be protected during and after integration?
+Which data is sensitive, who may use it, and what happens if a third party needs access? 
+Is Greenify's sensor data encrypted during transmission?
+Has Greenify experienced any security incidents?
+What should students do if they discover a data breach or security incident?
+Response
+Greenify puts a high value on security and has emphasized the importance of securing the data pipelines between their sensors and their centralized systems. For this project, assume this business process is out of scope.
+However, the City of Vancouver as a governmental institution needs to ensure that Greenify is following best practices with all of its organizational data and is in compliance with Canada’s Personal Information Protection and Electronic Documents Act (PIPEDA)
+At the outset of Greenify’s contract with City of Vancouver they must have a documented Data Governance Framework which demonstrates that they have policies, processes and procedures in place to properly govern all organizational data.
+Greenify would like to leverage existing industry examples of Data Governance Frameworks to avoid reinventing the wheel. Comparing and choosing an appropriate framework would help to provide Greenify with a roadmap towards implementing these policies, processes and procedures and satisfying CoV.
+The sensors don't collect personal information, but some City records contain employee and operational details. Only authorized staff should have access. We don't currently share data with third parties. If we select a route-planning vendor, we'll review its security practices and limit access to the data it needs.
+Greenify uses encrypted connections to transfer sensor data to our systems. Security of the sensor communication network is already handled internally and is outside this project's scope.
+Greenify hasn't experienced any major security incidents that need to be addressed in this project.
+In case of an unlikely security incident, report it immediately to Kousha. Do not try to investigate or resolve the incident independently. Our technical team will take responsibility for handling it.
+
+
+Software Selection for Route Optimization
+Functional Requirements
+What are the most important features and functionalities required in the route optimization software?
+Are real-time traffic updates, scalability, predictive analytics, or user interface design priorities?
+Budget and Constraints
+What is the budget allocated for software selection and implementation?
+Are there any financial constraints or preferred pricing models?
+Preferred Options
+Has Greenify researched or considered specific software solutions?
+Are there existing vendor relationships or technology preferences?
+Does Greenify prefer a single recommendation or a ranked shortlist?
+Response
+Greenify is able to use its sensors to map out high priority areas of the city. You can see an example of an internal mapping tool in “Heat Map.png”. 
+Clusters of bins are assigned a size based on their level of fullness and an urgency based on an internal algorithm which factors in the type of material (compost, recycling, waste), as well as environmental factors such as temperature and humidity. For example, compost in a high temperature and humidity area will smell worse and increase the urgency score for a bin.
+Each day, Greenify would like to create a single route which will hit the top 30 map clusters in terms of fullness and urgency. This route will then be divided amongst the available drivers and vehicles that day.
+Greenify has the capability of generating the list of 30 points, but will require a tool which can create the most efficient route between them.
+This will be done each morning approximately 2hours before drivers arrive to start their routes. It will not be updated throughout the day to reflect real-time conditions (this would be a possible future enhancement).
+Key features include:
+Ability to prioritize at least 30 stops in a single route
+Ability to generate at least 1 route every business day of the year
+Ability to upload a single file (or connect to a single) API with all stop information to minimize manual labour
+At this point Greenify does not know what is available in the market and does not know their budget. They will require a market survey to assess the tools available, features and cost/benefit of each tool.
+Students are not expected to code a route engine, install sensors or implement production software.
+A shortlist of two or three suitable options, with a clear recommendation, would be helpful. We want to understand the advantages, disadvantages, and costs before making a final decision.
+Q. Can students contact software vendors for demonstrations and quotations?
+You can use publicly available information to evaluate software options. If you feel a vendor demonstration or quotation is necessary, discuss it with Kousha first. We don't expect you to negotiate contracts or purchase software.
+Project Timeline, Deliverables, and Priorities
+Timeline and Deadlines
+What is the estimated timeline for the project's completion?
+Are there critical milestones or deadlines set by CoV or Greenify?
+Is there flexibility in the budget or timeline if we encounter scope changes?
+Prioritization
+Given the 10-week window, which tasks are of highest priority?
+If only one objective could be completed in this timeframe, which should it be?
+Expected Deliverables
+What specific outcomes or deliverables are expected at the project's conclusion?
+What format and level of detail should a consulting team use to present its findings?
+What acceptance criteria will Greenify use for the deliverables? Is testing required?
+Project management
+Is Greenify approaching this contract using a specific project life cycle, and is there a preferred approach you would like us to align with?
+What contractual obligations is Greenify struggling with, and what happens if delivery is late?
+Response
+With the City contract beginning January 1, 2027, Greenify needs to complete foundational planning promptly. However, the tasks from this project are largely foundational, so the more we can accomplish in 10 weeks, the better. You can choose your own methodology for the life cycle of the project. 
+We need to determine what can realistically be achieved within the 10-week timeframe and prioritize our tasks accordingly. The schedule is fixed and cannot be extended; any changes should only be approved if they do not affect the overall 10-week duration.
+In terms of value, the order would be:
+Security
+Data mapping
+Software selection (worst case we can hire someone to do this manually for a short period)
+We anticipate the implementation of a data governance framework to be the longest process, followed by building the data synchronization tool.
+As far as specific outcomes and deliverables, that will be up to you to propose a scope. However, we expect clear, practical recommendations supported by your research and analysis. For data mapping, examples showing how fields would be converted would be helpful. Actual implementation or production testing is not required. Kousha and the relevant subject-matter experts will review the deliverables.
+The contract between CoV and Grrenify is fixed-price, so extra work reduces Greenify's margin. A delay may require a remediation plan, postpone operational acceptance, increase costs, harm the City's confidence supplied for this exercise.
+Greenify would find concise decision-oriented recommendations and editable supporting materials most useful: assumptions, mapped source fields, a governance gap/roadmap, and a comparative vendor analysis where those items fit the proposed scope. Recommendations should identify owners, dependencies and unresolved decisions.
+
+
+
+Risks, Challenges, and Contingency Plans
+Identified Risks
+What potential risks has Greenify predicted in merging the IoT platform with CoV’s system?
+Are there concerns about system outages, data breaches, or other disruptions?
+Contingency Measures
+What contingency plans are in place to address potential project delays or security incidents?
+How does Greenify plan to mitigate identified risks?
+Security Concerns
+Are there specific security threats that need to be addressed during integration?
+How will data integrity and confidentiality be ensured?
+Response
+I got a lot of questions asking what risks I anticipate. This is really something I expect consultants to identify. In general, I would say:
+Project risks are up to you to identify and should be specific to your project scope
+Security risks are part of the scope of the security aspects of this project
+Mitigation plans for risks are up to you to propose as well
+Q. What known dependencies should we consider without having the risks written for us?
+A. Planning dependencies include obtaining authorized sample data after charter approval, aligning the two bin-identification schemes, coping with potentially incomplete City records, agreeing on a governance approach before the 2027 contract start, and selecting a provider that can import daily priority stops. The risk register, likelihood/impact assessments, mitigations, contingency plans and escalation thresholds are still for students to propose. The fixed 10-week duration cannot be extended simply because new risks are discovered.
+
+Stakeholders, Team Collaboration, and Communication
+Key Stakeholders
+Who are the primary contacts at Greenify and CoV for this project?
+What are the roles and responsibilities of each team member involved?
+Access and Support
+Will the consulting team have access to CoV’s technical staff or resources?
+Are there data stewards or system experts we can consult?
+Communication Preferences
+What are the preferred channels and frequency for communication and updates?
+How should issues or changes be escalated?
+How much time can Greenify staff devote to the later engagement?
+Who should students contact if Kousha is unavailable?
+Feedback and Reporting
+How often should progress reports be submitted, and in what format?
+Who will be responsible for approving deliverables?
+This project is exclusively for Greenify. There will not be stakeholders or contacts from the CoV.
+Greenify key resources include:
+Role
+Name
+Description
+CEO
+Emily Chen
+Emily will have visibility of the work completed in this project but will not be involved day to day.
+CTO
+Maya Patel
+Data governance is a shared responsibility of Maya and Ben and they will ultimately be the ones agreeing on a data governance framework
+COO
+Ben Thompson
+
+Integration Specialist
+Alex Turner
+Alex will be responsible for overseeing the development of the integration tool between CoV and Greenify databases, as well as any integrations built with a route planning tool.
+IoT Engineer
+Ravi Sharma
+IoT aspects are out of scope for this project
+Software Engineer
+Olivia Lee
+Olivia will be the main contact for technical questions, database access, and sample data. Her availability will be included in the two hours of staff support per week.
+Project Manager 
+Kousha Hashemi
+Project planning, execution, and monitoring.
+
+All communications can be channeled by email through Kousha. Weekly status updates make sense to me. Deliverables will be approved by Kousha and the appropriate SME (see above).
+For case-planning purposes, allow a weekly 30-minute check-in with Kousha, up to two hours per week of other staff.
+Any issues or changes should go through Kousha. For changes in the project scope, a form should be filled and signed by BCP team’s leader and the project manager. 
+If Kousha is not available, Olivia can help with technical questions and data access. For project decisions or scope changes, you should wait for Kousha.
+Budget and Resource Allocation
+Financial Resources
+What is the overall budget for the project, including software procurement and integration efforts?
+This project doesn’t have a budget in itself. It will help to define budgets for software and upcoming projects.
+Are there limitations or flexibility in the budget?
+What funding or cost limits apply, particularly when choosing route software?
+We don’t have a fixed budget or specific cost limit for this project, but we’re looking for a reasonably priced solution. If multiple software options are identified, we can compare their features, benefits, and costs to determine which offers the best value.
+Human Resources
+What staff and technological resources are available to support the project?
+See previous section
+Are additional personnel or training needed?
+We can provide training on our database if needed.
+Equipment and Tools
+Will the team have access to necessary equipment, software licenses, or other tools?
+We’ll add you to our database with read access. If any additional equipment or tools are required escalate to Kousha.
+Response
+See above in purple
+Project Scope and Limitations
+In-Scope vs. Out-of-Scope
+What activities are within the project's scope?
+Are there any tasks or deliverables explicitly out of scope?
+Should students draft actual data governance policies or only recommend a framework?
+Constraints
+Are there technological, legal, or operational constraints that could impact the project?
+What assumptions are being made about data availability and system capabilities?
+If tradeoffs occur between scope, cost, and schedule, which would you prefer we choose first?
+Does this project include gardening apps, VR, ERP manufacturing or a Business Continuity Plan?
+Response
+This will be up to you to define and identify. You’ll be proposing an appropriate scope based on the above information. Assumptions you’re making or constraints that impacted the scope you defined should be identified. Route optimization itself is definitely out of scope. The time limit is not negotiable, but we may change the scope, if the project cannot be done within the 10-week time frame.
+Gardening, VR, ERP and business continuity planning are out of scope.
+
+Existing Documentation and Resources
+Available Materials
+Can you provide existing policies, data models, or system documentation?
+Are there previous project reports or assessments that could aid our work?
+How soon after signing the charter will students receive data access? What happens if access is delayed?
+Data Access
+What level of access will the team have to Greenify’s and CoV's systems and data?
+Are there access protocols or confidentiality agreements required?
+What systems and testing environments can be accessed?
+How must students handle, store and dispose of sensitive samples?
+Response
+Greenify can provide the following upon signing of the project charter:
+Read access to our database
+Sample data from CoV
+Sample ERD
+Existing security documents:
+Employee password and MFA requirements
+Phishing and data security training manual
+We would like you to sign our standard Non Disclosure Agreement (NDA) within one week of charter approval. After signing the NDA, you’ll get access to more documents other than sample data.
+No stand-alone production-like test environment is committed in the case. Students should state these dependencies and avoid planning work that assumes unlimited production access.
+Greenify would provision access to named users, share only the minimum necessary de-identified samples through an approved system, and revoke access at handoff.
+Support and Maintenance Post-Project
+Ongoing Support
+What are the expectations for support or maintenance after project completion?
+Will there be responsibilities for updates, training, or troubleshooting?
+What other operational problems currently affect Greenify?
+Testing and Updates
+How frequently will the system need testing or updates to remain effective?
+Is there a plan for regular review and improvement?
+Response
+There will be ongoing support provided by Greenify to CoV, but given the fixed, limited engagement of BCIT student teams we have chosen tasks that should not require significant updates, training or troubleshooting.
+Most of the work outlined will be foundational documents for further work carried out by Greenify and the deliverable should reflect that appropriately.
+Like many growing companies, we're working on improving our internal processes and documentation. However, the three areas identified in the proposal are our priorities for this project. We don't want to expand the scope to unrelated operational issues.
+
+Regulatory and Environmental Compliance
+Compliance Standards
+Are there environmental regulations or standards that need to be met?
+What are the data protection laws applicable to this project?
+Additional Requirements
+Beyond security, are there other compliance considerations (e.g., accessibility standards, industry certifications)?
+Response
+Please consider PIPEDA (see Data Handling, Security, and Compliance) when considering data governance frameworks. All other standards, regulations and compliance considerations can be considered out of scope for this project.
+
+
+Miscellaneous Questions
+Third-Party Dependencies
+Are there external vendors or systems that might impact the project?
+How will relationships with third parties be managed?
+Future Expansion
+Is scalability a consideration for future expansions to other cities or services?
+Should the solution be designed with future integrations in mind?
+Should recommendations focus on Vancouver only or be reusable in other cities?
+Organizational Factors
+Are there organizational or cultural factors that could affect this projects success?
+Critical Systems
+Which systems or tools are the most important for daily operations?
+Response
+Currently we don’t have any dependencies on third parties. If we choose a software for route planning that will likely be our first third party dependency. What that means and how it impacts our choice could be a good thing to consider in the scope of that deliverable.
+We ultimately plan to expand to other cities and would like to leverage as much of the work we do for CoV as possible. We may integrate with other cities’ databases or with other 3rd party tools for additional functionality, though neither are currently on the roadmap.
+Greenify is a tech company and already good with new technologies. Employees are mainly engineers and tech persons. I don’t see any factors that can affects the success of project.
+Greenify uses 5G network to collect information from IoT devices and store data on their own datacentre. These two systems are critical infrastructure for Greenfy.
+Expansion into other cities is a long-term opportunity, not a new deliverable or an obligation to support multiple integrations during the 10-week period.

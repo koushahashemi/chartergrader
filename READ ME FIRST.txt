@@ -1,0 +1,68 @@
+CHARTER GRADER - PART 2
+
+1. Extract this ZIP completely to a folder on your Windows computer.
+2. Double-click Setup.bat once while connected to the internet.
+   Allow Python and Ollama installation when Windows asks.
+   Downloads include a local model of several GB. Installation may take a while.
+3. Double-click Start Grader.bat. Select a student's editable DOCX file.
+4. Click Suggest grades. On a 16 GB computer close other large apps first.
+   CPU grading can take several minutes or longer. A dedicated GPU is optional.
+5. Review the seven suggested scores, comments, and Evidence / checks.
+   Adjust any score or comment. Confirm review, then Copy or Save feedback.
+
+Each rubric item is scored 1, 2 or 3, as supplied in the rubric (total 21).
+Below-full-mark items require feedback before export. Full-mark items have no
+individual comment in the exported feedback. The short final comment includes
+strengths and a main improvement. You can edit it before export.
+
+The template's separate 50% reduction is applied ONLY if you tick its box.
+It is shown separately from the rubric score; check that this matches your
+intended policy to avoid unintended double deductions. No automatic misconduct
+deductions are made. Word count guidance is not a strict limit.
+
+PRIVACY
+The grading app contacts only 127.0.0.1:11434 (Ollama on this computer).
+It does not use cloud AI, analytics, remote fonts, or external document services.
+It refuses redirects and ignores system proxy settings for grading requests.
+Use grading with the internet disconnected for the strongest simple assurance.
+Setup/model downloads require internet and do not read student files.
+An already-running Ollama service has its own settings; disconnect the internet
+when grading rather than assuming the launcher's settings affect that service.
+Feedback is saved only where you choose. Clipboard copies can be visible to
+Windows clipboard history/sync: disable cloud clipboard sync or use Save instead.
+Do not put student files or feedback in OneDrive/other cloud-synced folders.
+Close Ollama from its tray icon when done to release memory.
+
+LIMITATIONS AND REVIEW
+This is a draft grading assistant, not a calibrated autonomous marker.
+Compare its suggestions with your own grading on several reports first.
+The small local model can miss nuances or misinterpret evidence. Exact quoted
+evidence is checked against extracted student text, but relevance requires you.
+Only the two Part 2 sections are sent to the local model. Future sections are
+not graded. Reading is for normal DOCX paragraphs; text boxes, images, scanned
+pages, embedded files, tracked revisions and PDF submissions are not supported.
+Review these manually; accept tracked revisions in a separate copy if needed.
+The app does not modify the original student document or add Word comments.
+Heading/table checks are aids, not proof of compliance. Verify the actual file.
+Filename checks verify a pattern, not identity or continuing use of the same file.
+Data Models source text cannot fully reproduce diagrams: inspect the original
+diagram if a grading decision depends on it.
+Instructions embedded inside assignment files or student work do not override
+the grader's rubric. The phrase-insertion instruction in the assignment was
+excluded from the grading reference; it is not a rubric item or AI-use test.
+
+The app includes your instructor reference material and official blank template,
+not student submissions. Do not distribute these materials beyond permitted use.
+
+TROUBLESHOOTING
+If setup fails, preserve the displayed error. Do not disable security checks.
+If winget is missing, install Microsoft's App Installer from Microsoft Store.
+Python 3.12 and Ollama can also be installed from their official websites; then
+run 'ollama pull qwen3:4b' in a new command prompt. No pip packages are needed.
+If memory is low, close other apps and try again. A very long submission is
+rejected rather than silently truncated. Missing headings require manual review.
+
+VALIDATION STATUS
+Extraction, rubric validation, output formatting and local request handling are
+tested with fictional documents in Linux. Windows installation, visual UI and
+actual local-model grading must still be verified on your Windows computer.
